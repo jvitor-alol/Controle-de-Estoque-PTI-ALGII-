@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "controleEstoque", "controleEstoque.csproj", "{13DA861E-1028-4261-BCD4-F80C3E872BBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13DA861E-1028-4261-BCD4-F80C3E872BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DA861E-1028-4261-BCD4-F80C3E872BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DA861E-1028-4261-BCD4-F80C3E872BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DA861E-1028-4261-BCD4-F80C3E872BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2BC7A3C-36A1-43B1-B3C0-25FB3F6E01A8}
+	EndGlobalSection
+EndGlobal
