@@ -8,12 +8,14 @@
         {
             bool endProgram = false;
             int select = -1;
+            int idAdicional = 0;
 
             List<Filme> estoqueFilmes = new List<Filme>();
 
             do
             {
                 Metodos.printMenu();
+                Console.Write("\nOpção: ");
                 select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
@@ -22,7 +24,7 @@
                         endProgram = true;
                         break;
                     case (int)Option.Novo:
-                        Metodos.Novo(estoqueFilmes);
+                        Metodos.Novo(estoqueFilmes, ref idAdicional);
                         break;
                     case (int)Option.Listar:
                         Metodos.Listar(estoqueFilmes);
