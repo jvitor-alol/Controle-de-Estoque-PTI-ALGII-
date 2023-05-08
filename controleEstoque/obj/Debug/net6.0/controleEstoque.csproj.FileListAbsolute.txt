@@ -1,0 +1,15 @@
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\bin\Debug\net6.0\controleEstoque.exe
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\bin\Debug\net6.0\controleEstoque.deps.json
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\bin\Debug\net6.0\controleEstoque.runtimeconfig.json
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\bin\Debug\net6.0\controleEstoque.dll
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\bin\Debug\net6.0\controleEstoque.pdb
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.csproj.AssemblyReference.cache
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.AssemblyInfoInputs.cache
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.AssemblyInfo.cs
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.csproj.CoreCompileInputs.cache
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.dll
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\refint\controleEstoque.dll
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.pdb
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\controleEstoque.genruntimeconfig.cache
+C:\Users\jvito\Source\Repos\jvitor-alol\Controle-de-Estoque-PTI-ALGII-\controleEstoque\obj\Debug\net6.0\ref\controleEstoque.dll
