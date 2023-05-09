@@ -45,7 +45,7 @@
                 }
             } while (!endProgram);
 
-            Console.WriteLine("\n\nFechando o programa...");
+            Console.WriteLine("\n###### Fechando o programa... ######");
             Console.ReadKey();
         }
     }

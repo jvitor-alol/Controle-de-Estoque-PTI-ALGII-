@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,8 @@ namespace controleEstoque
             Console.WriteLine("\n###### Adicionando novo filme ao estoque ######\n");
             Console.Write("Título                   : ");
             string? nome = Console.ReadLine();
-            Console.Write("Quantidade               : ");
-            int quantidade = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Quantidade               : ");
+            //int quantidade = Convert.ToInt32(Console.ReadLine());
             Console.Write("Preço                    : ");
             double preco = Convert.ToDouble(Console.ReadLine());
             Console.Write("Ano                      : ");
@@ -33,17 +34,18 @@ namespace controleEstoque
             Console.Write("Duração (minutos)        : ");
             int minutos = Convert.ToInt32(Console.ReadLine());
 
-            Filme filmeAdicionado = new Filme(nome, idAdicional, quantidade, preco, ano, classificacao, minutos);
+            Filme filmeAdicionado = new Filme(nome, idAdicional, 0, preco, ano, classificacao, minutos);
             estoqueFilmes.Add(filmeAdicionado);
             idAdicional++;
             string sID = String.Format("{0:D8}", filmeAdicionado.ID);
             Console.WriteLine($"\n{filmeAdicionado.nome} adicionado ao estoque. ID = {sID}.");
 
             estoqueFilmes.Sort((s1,s2) => s1.nome.CompareTo(s2.nome));
-            //Console.WriteLine("Estoque ordenado por ordem alfabética...");
+            Console.WriteLine("Estoque ordenado por ordem alfabética...");
             Console.Write("\nProsseguir...");
             Console.ReadKey();
         }
+
         public static void Listar(List<Filme> estoqueFilmes)
         {
             Console.WriteLine("\n###### Lista de filmes em estoque ######\n");
@@ -56,14 +58,14 @@ namespace controleEstoque
                 Console.WriteLine("|            Título            |   ID   | Ano |Faixa Etária|Duração (minutos)| Qtd. |  Preço  |");
                 foreach (Filme filme in estoqueFilmes)
                 {
-                    string sPreco = String.Format("{0:C2}", filme.preco);
+                    string sPreco = String.Format("{0:C2}", filme.Preco);
                     string sID = String.Format("{0:D8}", filme.ID);
                     if (filme.nome?.Length < 30)
-                        Console.WriteLine(String.Format($"|{filme.nome,-30}|{sID,-8}|{filme.ano,-5}|{filme.Classificacao,-12}|{filme.duracao,-17}|{filme.quantidade,-6}|{sPreco,-9}|"));
+                        Console.WriteLine(String.Format($"|{filme.nome,-30}|{sID,-8}|{filme.Ano,-5}|{filme.Classificacao,-12}|{filme.Duracao,-17}|{filme.Quantidade,-6}|{sPreco,-9}|"));
                     else
                     {
                         string sNome = filme.nome?.Substring(0, 26) + "..."; 
-                        Console.WriteLine(String.Format($"|{sNome,-30}|{sID,-8}|{filme.ano,-5}|{filme.Classificacao,-12}|{filme.duracao,-17}|{filme.quantidade,-6}|{sPreco,-9}|"));
+                        Console.WriteLine(String.Format($"|{sNome,-30}|{sID,-8}|{filme.Ano,-5}|{filme.Classificacao,-12}|{filme.Duracao,-17}|{filme.Quantidade,-6}|{sPreco,-9}|"));
                     }
 
                 }
@@ -71,6 +73,7 @@ namespace controleEstoque
             Console.Write("\nProsseguir...");
             Console.ReadKey();
         }
+
         public static void Remover(List<Filme> estoqueFilmes)
         {
             Console.WriteLine("\n###### Remoção de filmes da lista ######\n");
@@ -129,13 +132,64 @@ namespace controleEstoque
                 Console.ReadKey();
             }
         }
+
         public static void Entrada(List<Filme> estoqueFilmes)
         {
+            Console.WriteLine("\n###### Entrada de filmes no estoque ######\n");
+
+            if (estoqueFilmes.Count() < 1)
+            {
+                Console.WriteLine("Nenhum filme no sistema!");
+            }
+            else
+            {
+                Console.Write("Insira o ID do filme e a quantidade DVDs a ser adicionada: ");
+                string[] entrada = Console.ReadLine().Split(' ');
+                int idEntrada = Convert.ToInt32(entrada[0]);
+                int quantidadeEntrada = Convert.ToInt32(entrada[1]);
+
+                Filme filme = estoqueFilmes.Find(filme => filme.ID == idEntrada);
+                if (filme != null)
+                {
+                    filme.Quantidade += quantidadeEntrada;
+                    Console.WriteLine($"\nNovo total: {filme.nome} ({filme.Preco:C2}) - {filme.Quantidade} unidade(s).");
+
+                }
+                else
+                    Console.WriteLine("ID não encontrado... Voltando ao menu principal.");
+            }
+
             Console.Write("\nProsseguir...");
             Console.ReadKey();
         }
+
         public static void Saida(List<Filme> estoqueFilmes)
         {
+            Console.WriteLine("\n###### Saída de filmes do estoque ######\n");
+
+            if (estoqueFilmes.Count() < 1)
+            {
+                Console.WriteLine("Nenhum filme no sistema!");
+            }
+            else
+            {
+                Console.Write("Insira o ID do filme e a quantidade DVDs a ser removida: ");
+                string[] entrada = Console.ReadLine().Split(' ');
+                int idEntrada = Convert.ToInt32(entrada[0]);
+                int quantidadeEntrada = Convert.ToInt32(entrada[1]);
+
+                Filme filme = estoqueFilmes.Find(filme => filme.ID == idEntrada);
+                if (filme != null)
+                {
+                    filme.Quantidade -= quantidadeEntrada;
+                    Console.WriteLine($"\nNovo total: {filme.nome} ({filme.Preco:C2}) - {filme.Quantidade} unidade(s).");
+
+                }
+                else
+                    Console.WriteLine("ID não encontrado... Voltando ao menu principal.");
+            }
+
+
             Console.Write("\nProsseguir...");
             Console.ReadKey();
         }

@@ -10,21 +10,28 @@ namespace controleEstoque
     {
         public string? nome;
         private int id;
-        public int quantidade;
-        public double preco;
-        public int ano;
+        private int quantidade;
+        private double preco;
+        private int ano;
         private string? classificacao;
-        public int duracao;
+        private int duracao;
+
+        const int anoPrimeiroFilme = 1906;
+        internal int anoAtual = DateTime.Now.Year;
+        const double precoMin = 0.01, precoMax = 999.99;
+        const int duracaoMin = 1, duracaoMax = 271;
+
+        public Filme() { }
 
         public Filme (string? aNome, int aID, int aQuantidade, double aPreco, int aAno, string? aClassificacao, int aDuracao)
         {
             nome = aNome;
             ID = aID;
-            quantidade = aQuantidade;
-            preco = aPreco;
-            ano = aAno;
+            Quantidade = aQuantidade;
+            Preco = aPreco;
+            Ano = aAno;
             Classificacao = aClassificacao;
-            duracao = aDuracao;
+            Duracao = aDuracao;
         }
         
         public int ID
@@ -46,5 +53,61 @@ namespace controleEstoque
                     classificacao = "18";
             } 
         }
+
+        public int Quantidade
+        {
+            get { return quantidade; }
+            set
+            {
+                if (value > 0)
+                    quantidade = value;
+                else
+                    quantidade = 0;
+            }
+        }
+
+        public double Preco
+        {
+            get { return preco; }
+            set
+            {
+                if (value < precoMin)
+                    preco = precoMin;
+                else if (value > precoMax)
+                    preco = precoMax;
+                else
+                    preco = value;
+            }
+        }
+
+        public int Ano
+        {
+            get { return ano; }
+            set
+            {
+                if (value < anoPrimeiroFilme)
+                    ano = anoPrimeiroFilme;
+                else if (value > anoAtual)
+                    ano = anoAtual;
+                else 
+                    ano = value;
+            }
+        }
+
+        public int Duracao
+        {
+            get { return duracao; }
+            set
+            {
+                if (value < duracaoMin)
+                    duracao = duracaoMin;
+                else if (value > duracaoMax)
+                    duracao = duracaoMax;
+                else
+                    duracao = value;
+
+            }
+
+        } 
     }
 }
