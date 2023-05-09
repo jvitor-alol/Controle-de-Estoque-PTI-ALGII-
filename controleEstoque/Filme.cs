@@ -8,24 +8,43 @@ namespace controleEstoque
 {
     public class Filme
     {
-        public string? Nome { get; set; }
-        public int ID { get; set; }
-        public int Quantidade { get; set;}
-        public double Preco { get; set; }
-        public int Ano { get; set; }
-        public string? Classificacao { get; set;}
-        public int Minutos { get; set;}
+        public string? nome;
+        private int id;
+        public int quantidade;
+        public double preco;
+        public int ano;
+        private string? classificacao;
+        public int duracao;
 
-        public Filme(string? nome, int iD, int quantidade, double preco, int ano, string? classificacao, int minutos)
+        public Filme (string? aNome, int aID, int aQuantidade, double aPreco, int aAno, string? aClassificacao, int aDuracao)
         {
-            Nome = nome;
-            ID = iD;
-            Quantidade = quantidade;
-            Preco = preco;
-            Ano = ano;
-            Classificacao = classificacao;
-            Minutos = minutos;
+            nome = aNome;
+            ID = aID;
+            quantidade = aQuantidade;
+            preco = aPreco;
+            ano = aAno;
+            Classificacao = aClassificacao;
+            duracao = aDuracao;
         }
-                
+        
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string? Classificacao 
+        { 
+            get { return classificacao; } 
+            set 
+            {
+                if (value == "L" || value == "10" || value == "12" || value == "14" || value == "16" || value == "18")
+                {
+                    classificacao = value;
+                }
+                else
+                    classificacao = "18";
+            } 
+        }
     }
 }

@@ -2,13 +2,13 @@
 {
     internal class Program
     {
-        enum Option { Sair, Novo, Listar, Remover, Entrada, Saida}
+        enum Option { Sair, Novo, Listar, Remover, Entrada, Saida }
 
         static void Main(string[] args)
         {
             bool endProgram = false;
-            int select = -1;
-            int idAdicional = 0;
+            int select;
+            int idAdicional = 1;
 
             List<Filme> estoqueFilmes = new List<Filme>();
 
@@ -39,7 +39,7 @@
                         Metodos.Saida(estoqueFilmes);
                         break;
                     default:
-                        Console.Write("Opção invalida! ");
+                        Console.Write("Opção invalida!");
                         Console.ReadKey();
                         break;
                 }
