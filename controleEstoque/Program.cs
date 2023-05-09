@@ -7,7 +7,7 @@
         static void Main(string[] args)
         {
             bool endProgram = false;
-            int select;
+            Option select;
             int idAdicional = 1;
 
             List<Filme> estoqueFilmes = new List<Filme>();
@@ -16,26 +16,26 @@
             {
                 Metodos.printMenu();
                 Console.Write("\nOpção: ");
-                select = Convert.ToInt32(Console.ReadLine());
+                select = (Option)Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
                 {
-                    case (int)Option.Sair:
+                    case Option.Sair:
                         endProgram = true;
                         break;
-                    case (int)Option.Novo:
+                    case Option.Novo:
                         Metodos.Novo(estoqueFilmes, ref idAdicional);
                         break;
-                    case (int)Option.Listar:
+                    case Option.Listar:
                         Metodos.Listar(estoqueFilmes);
                         break;
-                    case (int)Option.Remover:
+                    case Option.Remover:
                         Metodos.Remover(estoqueFilmes);
                         break;
-                    case (int)Option.Entrada:
+                    case Option.Entrada:
                         Metodos.Entrada(estoqueFilmes);
                         break;
-                    case (int)Option.Saida:
+                    case Option.Saida:
                         Metodos.Saida(estoqueFilmes);
                         break;
                     default:
