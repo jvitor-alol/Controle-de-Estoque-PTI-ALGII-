@@ -34,7 +34,7 @@ namespace controleEstoque
             Console.Write("Duração (minutos)        : ");
             int minutos = Convert.ToInt32(Console.ReadLine());
 
-            Filme filmeAdicionado = new Filme(nome, idAdicional, 0, preco, ano, classificacao, minutos);
+            Filme filmeAdicionado = new Filme(nome, idAdicional, 0, preco, ano, classificacao.ToUpper(), minutos);
             estoqueFilmes.Add(filmeAdicionado);
             idAdicional++;
             string sID = String.Format("{0:D8}", filmeAdicionado.ID);
