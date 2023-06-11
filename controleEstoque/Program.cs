@@ -9,20 +9,21 @@
         {
             bool endProgram = false;
             Option select;
-            int opcao = 0; //temporario para testes com leitura e escrita de arquivos persistentes
+            string opcao = "Y"; //temporario para testes com leitura e escrita de arquivos persistentes
             string caminhoAbsoluto = "~/Development/Controle-de-Estoque-PTI-ALGII-/controleEstoque/estoquePersist.txt";
             List<Filme> estoqueFilmes = new List<Filme>();
 
             //escolher usar base de dados ou não
-            opcao = Convert.ToInt32(Console.ReadLine());
-
+            Console.Clear();
+            Console.WriteLine("\n\n\nRecuperar estoque anterior? [Y/n]")
+            opcao = ToUpper(Console.ReadLine());            
             switch (opcao){
-                case 0:
+                case Y:
                     //usa arquivo de texto
                     Console.WriteLine("Recuperando base de dados...");
                     lerEstoque(estoqueFilmes, caminhoAbsoluto, ref idAdicional);
                     break;
-                case 1:
+                case N:
                     Console.WriteLine("Recriando base de dados...");
                     break;
                 default:
