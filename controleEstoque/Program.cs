@@ -15,15 +15,15 @@
 
             //escolher usar base de dados ou não
             Console.Clear();
-            Console.WriteLine("\n\n\nRecuperar estoque anterior? [Y/n]")
-            opcao = ToUpper(Console.ReadLine());            
+            Console.WriteLine("\n\n\nRecuperar estoque anterior? [Y/n]");
+            opcao = Console.ReadLine().ToUpper();            
             switch (opcao){
-                case Y:
+                case "Y":
                     //usa arquivo de texto
                     Console.WriteLine("Recuperando base de dados...");
                     lerEstoque(estoqueFilmes, caminhoAbsoluto, ref idAdicional);
                     break;
-                case N:
+                case "N":
                     Console.WriteLine("Recriando base de dados...");
                     break;
                 default:
